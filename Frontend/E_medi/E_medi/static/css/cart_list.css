@@ -1,0 +1,98 @@
+body {
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/46/690/desktop-wallpaper-pharmacy-backgrounds-png-drugstore.jpg');
+  background-size: cover; /* Resize the image to cover the entire page */
+  background-attachment: fixed; /* Keep the background fixed as the page scrolls */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply styles to the table header cells */
+table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Apply styles to the table data cells */
+table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Style specific columns */
+/* Product Name column */
+.product-name {
+  width: 30%; /* Adjust the width as needed */
+}
+
+/* Price column */
+.price {
+  width: 10%; /* Adjust the width as needed */
+  text-align: right;
+}
+
+/* Quantity column */
+.quantity {
+  width: 10%; /* Adjust the width as needed */
+  text-align: center;
+}
+
+/* Each Total column */
+.each-total {
+  width: 15%; /* Adjust the width as needed */
+  text-align: right;
+}
+
+/* Total column */
+.total {
+  width: 15%; /* Adjust the width as needed */
+  text-align: right;
+}
+
+/* Remove column */
+.remove {
+  width: 10%; /* Adjust the width as needed */
+  text-align: center;
+}
+
+/* Style the red quantity text for exceeded inventory */
+.exceeded-quantity {
+  color: red;
+}
+
+/* Style buttons */
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Style the Buy All button */
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+/* Style links */
+a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Add spacing */
+h1, h2, h3, h4, h5, h6, p, a, button {
+  margin-bottom: 10px;
+}

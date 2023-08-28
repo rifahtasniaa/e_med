@@ -1,0 +1,24 @@
+<!-- delivery_history.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delivery Address History</h1>
+  {% if delivery_infos %}
+    <ul>
+      {% for info in delivery_infos %}
+        <li>
+          <p>Full Name: {{ info.full_name }}</p>
+          <p>Address: {{ info.address }}</p>
+          <p>City: {{ info.city }}</p>
+          <p>Country: {{ info.country }}</p>
+          <p>Phone Number: {{ info.phone_number }}</p>  <!-- Show the phone number -->
+          <p>Email: {{ info.email }}</p>  <!-- Show the email -->
+          <a href="{% url 'edit_delivery_info' info.pk %}">Edit</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No delivery address history.</p>
+  {% endif %}
+{% endblock %}

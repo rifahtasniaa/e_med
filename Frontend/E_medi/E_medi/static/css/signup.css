@@ -1,0 +1,96 @@
+/* signup.css */
+
+/* Apply background image to the entire page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(https://images.newscientist.com/wp-content/uploads/2019/06/18153152/medicineshutterstock_1421041688.jpg?width=900);
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Styles for the top navigation */
+.topnav {
+  background-color: rgb(135, 235, 148); /* Sky blue color */
+  overflow: hidden;
+  display: flex; /* Use flex display to align links horizontally */
+}
+
+/* Style for navigation links */
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Style for the active link */
+.topnav a.active {
+  background-color: rgb(135, 235, 148);
+  color: white;
+}
+
+/* Add margin to the first link for spacing */
+.topnav a:first-child {
+  margin-right: 20px; /* Add right margin to separate the links */
+}
+
+/* Style for the Login link */
+.topnav a.login {
+  background-color: #04AA6D; /* Set the same color as the active link */
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px; /* Add spacing between Home and Login links */
+}
+.topnav a.login:hover {
+  background-color: #39b300;
+}
+
+/* Style for the signup form container */
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-container button[type="submit"] {
+  background-color: #04AA6D; /* Set the same color as the active link */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-container button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/cart_list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Each Total</th>
+          <th>Total</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart_items %}
+          <tr>
+            <td>{{ item.product.name }}</td>
+            <td>${{ item.product.price }}</td>
+            <td>
+              <form action="{% url 'update_cart' item.product.pk %}" method="post">
+                {% csrf_token %}
+                <button type="submit" name="action" value="remove">-</button>
+                <span>
+                  <!-- Indicate when the quantity in cart exceeds the available inventory -->
+                  {% if item.quantity > item.product.quantity %}
+                    <span style="color: red;">{{ item.quantity }}</span>
+                  {% else %}
+                    {{ item.quantity }}
+                  {% endif %}
+                  / {{ item.product.quantity }}
+                </span>
+                <button type="submit" name="action" value="add">+</button>
+              </form>
+            </td>
+            <td>${{ item.get_total_price }}</td>
+            {% if forloop.first %}
+              <td rowspan="{{ cart_items.count }}">{{ cart.get_cart_total }}</td>
+              <td rowspan="{{ cart_items.count }}">
+                <form method="post" action="{% url 'buy_products' %}">
+                  {% csrf_token %}
+                  <button type="submit">Buy All</button>
+                </form>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- Button to show delivery address history -->
+    <a href="{% url 'delivery_history' %}">Show Delivery Address History</a>
+
+    <!-- Button to go back to the product list page -->
+    <a href="{% url 'product_list' %}">Back to Product List</a>
+  </div>
+{% endblock %}

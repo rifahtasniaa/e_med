@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/payment_confirmation.css' %}">
+  
+  <div class="payment-confirmation">
+    <h2>Payment Successful</h2>
+    <p>Thank you for your purchase!</p>
+    <p>An email with your purchase details and delivery information has been sent to: {{ user.email }}</p>
+  </div>
+  
+{% endblock %}

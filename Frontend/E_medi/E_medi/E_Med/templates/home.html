@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    /* Add custom CSS to hide the navigation bar on the homepage */
+    nav {
+      display: none;
+    }
+  </style>
+  <div class="home-container">
+    <h1>Welcome to E-Medi!</h1>
+    <p>Please choose one of the following options:</p>
+    <div class="buttons-container">
+      <a href="{% url 'login' %}" class="login-btn">Login</a>
+      <a href="{% url 'signup' %}" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Additional Features Section -->
+  <div class="feature-container">
+    <div class="feature-box">
+      <span class="feature-icon">📦</span>
+      <h2 class="feature-title">Order Medicines Online</h2>
+      <p class="feature-description">Browse our wide range of medicines and order them online for doorstep delivery.</p>
+    </div>
+
+    <div class="feature-box">
+      <span class="feature-icon">🔔</span>
+      <h2 class="feature-title">Stay Informed</h2>
+      <p class="feature-description">Receive notifications and updates about health-related news and events.</p>
+    </div>
+  </div>
+{% endblock %}

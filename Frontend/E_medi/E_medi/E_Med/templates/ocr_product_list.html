@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>OCR Product List</h1>
+  <form method="post" action="{% url 'add_selected_to_cart' %}">
+    {% csrf_token %}
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Add to Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td><input type="checkbox" name="selected_products" value="{{ product.pk }}"></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <button type="submit">Add Selected to Cart</button>
+  </form>
+
+  <!-- Button to select all products -->
+  <form id="selectAllForm">
+    <button type="button" onclick="selectAllProducts()">Select All</button>
+  </form>
+
+  <!-- Button to return to the product list page -->
+  <a href="{% url 'product_list' %}">Back to Product List</a>
+
+  <script>
+    function selectAllProducts() {
+      const checkboxes = document.getElementsByName('selected_products');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = true;
+      });
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,2 @@
+C:\\Program Files\\Tesseract-OCR\\tesseract.exe
+C:\Program Files\Tesseract-OCR

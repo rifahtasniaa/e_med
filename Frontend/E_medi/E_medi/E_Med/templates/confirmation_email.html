@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Thank You for Your Purchase!</h1>
+    <p>Dear {{ user.username }},</p>
+    <p>Your order has been confirmed. We will deliver the items to the following address:</p>
+    <p>Full Name: {{ delivery_info.full_name }}</p>
+    <p>Address: {{ delivery_info.address }}</p>
+    <p>City: {{ delivery_info.city }}</p>
+    <p>Country: {{ delivery_info.country }}</p>
+    <p>Phone Number: {{ delivery_info.phone_number }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Please have the cash ready for the delivery. Our delivery team will contact you shortly to confirm the delivery schedule.</p>
+    <p>Thank you for shopping with us!</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- category_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Categories</h2>
+  <ul>
+    {% for category in categories %}
+      <li><a href="{% url 'products_by_category' category.pk %}">{{ category.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Prescription OCR</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*">
+    <button type="submit">Scan Prescription</button>
+  </form>
+
+  {% if ocr_text %}
+    <h3>Extracted Text:</h3>
+    <pre>{{ ocr_text }}</pre>
+  {% endif %}
+{% endblock %}

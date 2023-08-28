@@ -1,0 +1,100 @@
+/* login.css */
+
+/* Styles for the top navigation */
+.topnav {
+  background-color: rgb(135, 235, 148);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start; /* Align links to the top left */
+  padding: 10px; /* Add padding to create space around the navigation */
+  border: 2px solid #333; /* Add border to create a box-style navigation */
+  border-radius: 5px;
+  margin-bottom: 20px; /* Add margin to separate the navigation from other content */
+}
+
+/* Style for navigation links */
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 16px; /* Adjust padding for a more compact look */
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Style for the active link */
+.topnav a.active {
+  background-color: rgb(135, 235, 148);
+  color: white;
+}
+
+/* Style for the Login link */
+.topnav a.login {
+  background-color: #04AA6D;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+
+.topnav a.login:hover {
+  background-color: #39b300;
+}
+
+/* Apply background image to the entire page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1628771065518-0d82f1938462?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Style for the signup form container */
+.login-container {
+  max-width: 400px;
+  margin: 150px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}

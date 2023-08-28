@@ -1,0 +1,49 @@
+body {
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/46/690/desktop-wallpaper-pharmacy-backgrounds-png-drugstore.jpg');
+  background-size: cover; /* Resize the image to cover the entire page */
+  background-attachment: fixed; /* Keep the background fixed as the page scrolls */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+.product-container {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.product-box {
+  border: 1px solid rgb(230, 126, 34);
+  padding: 20px;
+  text-align: center;
+  background: rgb(230, 126, 34);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.product-box img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* New styles for OCR section */
+.ocr-section {
+  position: absolute;
+  top: 75px; /* Adjust the value to position the OCR section */
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}

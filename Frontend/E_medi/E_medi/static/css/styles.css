@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  background-image: url(https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  
+}
+
+.home-container h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.home-container p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-btn, .signup-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff; /* Replace with your theme color */
+  border: none;
+  border-radius: 5px;
+}
+
+.login-btn:hover, .signup-btn:hover {
+  background-color: #0056b3; /* Replace with your theme color on hover */
+}
+
+/* Additional Styles for Enhanced Homepage */
+
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.feature-box {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.feature-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-size: 16px;
+}

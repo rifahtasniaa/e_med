@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/delivery_info.css' %}">
+
+  <div class="delivery-container">
+    <h1>Delivery Information</h1>
+
+    {% if default_info %}
+      <h2>Default Delivery Information</h2>
+      <p>{{ default_info.full_name }}</p>
+      <p>{{ default_info.address }}</p>
+      <p>{{ default_info.city }}</p>
+      <p>{{ default_info.country }}</p>
+      {% if default_info.phone_number %}
+        <p>Phone Number: {{ default_info.phone_number }}</p>
+      {% endif %}
+      {% if default_info.email %}
+        <p>Email: {{ default_info.email }}</p>
+      {% endif %}
+      <a href="{% url 'edit_delivery_info' default_info.pk %}">Edit</a>
+      <form method="post" action="{% url 'select_from_history' %}">
+        {% csrf_token %}
+        <input type="hidden" name="selected_address_id" value="{{ default_info.pk }}">
+        <button type="submit">Use This Address</button>
+      </form>
+    {% endif %}
+
+    <h2> </h2>
+    <ul>
+      {% for info in delivery_infos %}
+        {% if not info.is_default %}
+          <li>
+            <p>{{ info.full_name }}</p>
+            <p>{{ info.address }}</p>
+            <p>{{ info.city }}</p>
+            <p>{{ info.country }}</p>
+            {% if info.phone_number %}
+              <p>Phone Number: {{ info.phone_number }}</p>
+            {% endif %}
+            {% if info.email %}
+              <p>Email: {{ info.email }}</p>
+            {% endif %}
+            <a href="{% url 'edit_delivery_info' info.pk %}">Edit</a>
+            <form method="post" action="{% url 'select_from_history' %}">
+              {% csrf_token %}
+              <input type="hidden" name="selected_address_id" value="{{ info.pk }}">
+              <button type="submit">Use This Address</button>
+            </form>
+            <form method="post" action="{% url 'remove_delivery_info' info.pk %}">
+              {% csrf_token %}
+              <button type="submit">Remove</button>
+            </form>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <h2> </h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="full_name">Full Name:</label>
+      <input type="text" name="full_name" required><br>
+      <label for="address">Address:</label>
+      <textarea name="address" required></textarea><br>
+      <label for="city">City:</label>
+      <input type="text" name="city" required><br>
+      <label for="country">Country:</label>
+      <input type="text" name="country" required><br>
+      <label for="phone_number">Phone Number:</label>
+      <input type="tel" name="phone_number" pattern="[0-9]{10,15}"><br>
+      <label for="email">Email:</label>
+      <input type="email" name="email"><br>
+      <button type="submit">Save and Continue to Payment</button>
+    </form>
+
+    
+  </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Medi</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cart_list.css' %}">
+  <link rel="stylesheet" href="{% static 'css/delivery_info.css' %}">
+  <link rel="stylesheet" href="{% static 'css/payment_confirmation.css' %}">
+  <link rel="stylesheet" href="{% static 'css/edit_delivery_info.css' %}">
+  
+</head>
+<body>
+  {% if request.resolver_match.url_name != 'home' %}  <!-- Check if it's not the home page -->
+  <nav class="topnav">
+    <a href="{% url 'home' %}">Home</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url 'cart_list' %}">My Cart</a>
+    {% else %}
+      {% if request.resolver_match.url_name != 'login' %}
+        <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+      {% if request.resolver_match.url_name != 'signup' %}
+        <a href="{% url 'signup' %}">Sign Up</a>
+      {% endif %}
+    {% endif %}
+  </nav>
+  {% endif %}
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

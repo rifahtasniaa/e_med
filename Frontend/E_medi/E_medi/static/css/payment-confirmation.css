@@ -1,0 +1,39 @@
+/* payment_confirmation.css */
+
+body {
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/46/690/desktop-wallpaper-pharmacy-backgrounds-png-drugstore.jpg');
+  background-size: cover; /* Resize the image to cover the entire page */
+  background-attachment: fixed; /* Keep the background fixed as the page scrolls */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+
+.payment-confirmation {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .payment-confirmation h2 {
+    color: #333;
+  }
+  
+  .payment-confirmation p {
+    margin-bottom: 10px;
+  }
+  
+  .payment-confirmation a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .payment-confirmation a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add any additional styles as needed */
+  

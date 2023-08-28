@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+  <div class="container">
+    <h1>Payment</h1>
+    <p>Please select your preferred payment method:</p>
+    
+    <form method="post" action="{% url 'send_cash_on_delivery_email' %}">
+      {% csrf_token %}
+      <button type="submit" name="payment_method" value="cash_on_delivery">Cash on Delivery</button>
+    </form>
+    
+    <!-- Other payment options here -->
+  </div>
+{% endblock %}
